@@ -6,11 +6,11 @@ resources:
 
 pipelines:
   - name: pipeline_S_WF_012_001
-        configuration:
-          inputResources:
-            - name: S_WF_012_resource
-          outputResources:
-            - name: S_WF_012_resource  
+    configuration:
+      inputResources:
+        - name: S_WF_012_resource
+      outputResources:
+        - name: S_WF_012_resource  
     steps:
       - name: S_WF_012_input1
         type: Bash

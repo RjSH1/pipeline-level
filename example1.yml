@@ -7,7 +7,11 @@ resources:
     type: PropertyBag
     configuration:
       runNumber: 0
-
+  - name: S_WF_010_resource3
+    type: PropertyBag
+    configuration:
+      runNumber: 0
+      
 pipelines:
   - name: pipeline_S_WF_010
     configuration:
@@ -24,8 +28,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: S_WF_010_trigger
-          #outputResources:
-            #- name: S_WF_010_resource1
+          outputResources:
+            - name: S_WF_010_resource3
         execution:
           onExecute:
             - write_output S_WF_010_resource1 runNumber=${run_number}
@@ -34,8 +38,8 @@ pipelines:
         configuration:
           inputSteps:
             - name: S_WF_010_trigger
-          #outputResources:
-            #- name: S_WF_010_resource2
+          outputResources:
+            - name: S_WF_010_resource3
         execution:
           onExecute:
             - echo "test"
@@ -45,7 +49,7 @@ pipelines:
           inputResources:
             - name: S_WF_010_resource1
               newVersionOnly: true
-            - name: S_WF_010_resource2
+            - name: S_WF_010_resource3
               #newVersionOnly: true
         execution:
           onExecute:

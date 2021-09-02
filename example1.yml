@@ -3,6 +3,11 @@ resources:
     type: PropertyBag
     configuration:
       runNumber: 0
+     
+  - name: S_WF_012_resource2
+    type: PropertyBag
+    configuration:
+      runNumber: 0     
 
 pipelines:
   - name: pipeline_S_WF_012_001
@@ -14,7 +19,7 @@ pipelines:
         type: Bash
         configuration:
           outputResources:
-            - name: S_WF_012_resource        
+            - name: S_WF_012_resource2        
         execution:
           onExecute:
             #- write_output S_WF_012_resource runNumber=${run_number}

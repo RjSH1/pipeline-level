@@ -45,7 +45,7 @@ pipelines:
           inputResources:
             - name: S_WF_010_resource1
               newVersionOnly: true
-            #- name: S_WF_010_resource2
+            - name: S_WF_010_resource2
               #newVersionOnly: true
         execution:
           onExecute:

@@ -1,0 +1,40 @@
+resources:
+  - name: S_WF_012_resource
+    type: PropertyBag
+    configuration:
+      runNumber: 0
+
+pipelines:
+  - name: pipeline_S_WF_012_001
+        configuration:
+          inputResources:
+            - name: S_WF_012_resource
+          outputResources:
+            - name: S_WF_012_resource  
+    steps:
+      - name: S_WF_012_input1
+        type: Bash
+        execution:
+          onExecute:
+            #- write_output S_WF_012_resource runNumber=${run_number}
+            - echo "test"
+      - name: S_WF_012_step1
+        type: Bash
+        execution:
+          onExecute:
+            - echo "test"
+      - name: S_WF_012_step2
+        type: Bash
+        execution:
+          onExecute:
+            - echo "test"
+  - name: pipeline_S_WF_012_002
+    steps:
+      - name: S_WF_012_002
+        type: Bash
+        configuration:
+          outputResources:
+            - name: S_WF_012_resource
+        execution:
+          onExecute:
+            - write_output S_WF_012_resource runNumber=${run_number}

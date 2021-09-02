@@ -50,7 +50,7 @@ pipelines:
             - name: S_WF_010_resource1
               newVersionOnly: true
             - name: S_WF_010_resource3
-              #newVersionOnly: true
+              newVersionOnly: true
         execution:
           onExecute:
             - echo "test"

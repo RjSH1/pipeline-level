@@ -1,0 +1,43 @@
+resources:
+    - name: buildInfo
+      type: BuildInfo
+      configuration:
+          sourceArtifactory: s_artifactory
+
+pipelines:
+  - name: jb_test
+    configuration:
+      environmentVariables:
+        readOnly:
+          buildPlaneVersion: 0.0.0-f41092
+          dockerVersion: 20.10.9
+          dockerComposeVersion: 1.27.4
+        MY_MESSAGE: '"Hello World! - 123"'
+      inputResources:
+            - name: buildInfo
+    steps:
+      - name: step_1
+        type: Bash
+        configuration:
+          #inputResources:
+          #  - name: jb_app_jfrog
+          environmentVariables:
+            MY_KEY: 
+              - '"Hello - World"'
+              - '"New Key"'
+              - '"Another Key"'
+            MY_NEW_KEY: '"Another key - Value"'
+        execution:
+          onExecute:
+            - echo $MY_MESSAGE
+            - echo "Running $pipeline_name | $step_name on node ID $step_node_id"
+            
+      - name: step_2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: step_1
+        execution:
+          onExecute:
+            - echo $MY_MESSAGE
+            - echo "Running $pipeline_name | $step_name on node ID $step_node_id"

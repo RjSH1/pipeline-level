@@ -22,10 +22,7 @@ pipelines:
           #inputResources:
           #  - name: jb_app_jfrog
           environmentVariables:
-            MY_KEY: 
-              - '"Hello - World"'
-              - '"New Key"'
-              - '"Another Key"'
+            MY_KEY: '"Hello - World"'
             MY_NEW_KEY: '"Another key - Value"'
         execution:
           onExecute:

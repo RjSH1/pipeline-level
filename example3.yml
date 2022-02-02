@@ -16,7 +16,7 @@ pipelines:
       inputResources:
             - name: buildInfo
     steps:
-      - name: step_1a
+      - name: step_1
         type: Bash
         configuration:
           #inputResources:

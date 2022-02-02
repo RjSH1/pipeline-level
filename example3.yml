@@ -1,11 +1,11 @@
 resources:
-    - name: buildInfo
+    - name: buildInfo1a
       type: BuildInfo
       configuration:
           sourceArtifactory: s_artifactory
 
 pipelines:
-  - name: jb_test
+  - name: jb_test1a
     configuration:
       environmentVariables:
         readOnly:
@@ -16,7 +16,7 @@ pipelines:
       inputResources:
             - name: buildInfo
     steps:
-      - name: step_1
+      - name: step_1a
         type: Bash
         configuration:
           #inputResources:
